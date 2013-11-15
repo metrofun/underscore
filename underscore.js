@@ -4,6 +4,17 @@
 //     Underscore may be freely distributed under the MIT license.
 
 (function() {
+    // Support ADDON SDK environment
+    if (!setTimeout) {
+        var {
+            setImmediate,
+            clearImmediate,
+            setTimeout,
+            setInterval,
+            clearTimeout,
+            clearInterval
+        } = require('timer');
+    }
 
   // Baseline setup
   // --------------
